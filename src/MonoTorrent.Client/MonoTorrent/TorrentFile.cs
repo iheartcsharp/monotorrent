@@ -13,10 +13,10 @@
 // distribute, sublicense, and/or sell copies of the Software, and to
 // permit persons to whom the Software is furnished to do so, subject to
 // the following conditions:
-// 
+//
 // The above copyright notice and this permission notice shall be
 // included in all copies or substantial portions of the Software.
-// 
+//
 // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
 // EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
 // MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -32,6 +32,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+
+using MonoTorrent.Client.MonoTorrent;
 
 namespace MonoTorrent
 {
@@ -60,6 +62,9 @@ namespace MonoTorrent
 
     public sealed class TorrentFile : IEquatable<TorrentFile>, ITorrentFile
     {
+        private int directoryIndex = int.MinValue;
+        private string name = string.Empty;
+
         /// <summary>
         /// The index of the last piece of this file
         /// </summary>
@@ -80,7 +85,27 @@ namespace MonoTorrent
         /// In the case of a multi-file torrent this is the relative path of the file
         /// (including the filename) from the base directory
         /// </summary>
-        public string Path { get; }
+        public string Path {
+            get {
+                var path = DirectoryManager.Get(directoryIndex);
+
+                return System.IO.Path.Combine(path, name);
+            }
+            private set {
+                if (string.IsNullOrWhiteSpace (value)) {
+                    directoryIndex = -1;
+                    name = string.Empty;
+
+                    return;
+                }
+
+                name = System.IO.Path.GetFileName (value);
+
+                var path = System.IO.Path.GetDirectoryName (value) ?? string.Empty;
+
+                directoryIndex = DirectoryManager.Add (path);
+            }
+        }
 
         /// <summary>
         /// Returns the number of pieces for this file. This is the same as `<see cref="EndPieceIndex"/> - <see cref="StartPieceIndex"/> + 1`.
