@@ -1,4 +1,4 @@
-namespace MonoTorrent.Client.MonoTorrent;
+namespace MonoTorrent;
 
 public class DirectoryItem
 {

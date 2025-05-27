@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace MonoTorrent.Client.MonoTorrent;
+namespace MonoTorrent;
 
 public static class DirectoryManager
 {
