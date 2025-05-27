@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 
 namespace MonoTorrent;
 
@@ -6,28 +7,26 @@ public static class DirectoryManager
 {
     private static readonly List<DirectoryItem> Directories = [];
 
-    public static int Add (string directoryPath)
+    public static long Add (string directoryPath)
     {
         if (string.IsNullOrEmpty (directoryPath)) {
             return -1;
         }
 
-        for (int i = 0; i < Directories.Count; i++) {
-            if (Directories[i].Path == directoryPath) {
-                Directories[i].Count++;
-                return i;
-            }
+        var item = Directories.SingleOrDefault (x => x.Path == directoryPath);
+
+        if (item == null) {
+            item = new DirectoryItem { Count = 1, Path = directoryPath };
+            Directories.Add (item);
+        } else {
+            item.Count++;
         }
 
-        var index = Directories.Count;
-
-        Directories.Add (new DirectoryItem { Count = 1, Path = directoryPath });
-
-        return index;
+        return item.Id;
     }
 
-    public static string Get (int index)
+    public static string Get (long id)
     {
-        return index < 0 ? string.Empty : Directories[index].Path;
+        return id <= 0 ? string.Empty : Directories.Single (x => x.Id == id).Path;
     }
 }
