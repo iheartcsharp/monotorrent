@@ -61,7 +61,7 @@ namespace MonoTorrent
 
     public sealed class TorrentFile : IEquatable<TorrentFile>, ITorrentFile
     {
-        private int directoryIndex = int.MinValue;
+        private long directoryIndex;
         private string name = string.Empty;
 
         /// <summary>
