@@ -11,7 +11,7 @@
     <GitInfoVersion></GitInfoVersion>
     <MonoNatVersion>3.*</MonoNatVersion>
     <ReusableTasksVersion>4.*</ReusableTasksVersion>
-    <SystemMemoryVersion>4.5.5</SystemMemoryVersion>
+    <SystemMemoryVersion>4.*</SystemMemoryVersion>
   </PropertyGroup>
 
 </Project>

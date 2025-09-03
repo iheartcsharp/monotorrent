@@ -13,10 +13,10 @@
 // distribute, sublicense, and/or sell copies of the Software, and to
 // permit persons to whom the Software is furnished to do so, subject to
 // the following conditions:
-// 
+//
 // The above copyright notice and this permission notice shall be
 // included in all copies or substantial portions of the Software.
-// 
+//
 // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
 // EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
 // MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -301,7 +301,7 @@ namespace MonoTorrent.Client
         internal BitField PartialProgressSelector { get; private set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PeerManager Peers { get; }
 
@@ -539,7 +539,7 @@ namespace MonoTorrent.Client
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="obj"></param>
         /// <returns></returns>
@@ -550,7 +550,7 @@ namespace MonoTorrent.Client
 
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="other"></param>
         /// <returns></returns>
@@ -558,7 +558,7 @@ namespace MonoTorrent.Client
             => other != null && other.InfoHashes == InfoHashes;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         public override int GetHashCode ()
@@ -772,7 +772,7 @@ namespace MonoTorrent.Client
                 LastLocalPeerAnnounceTimer.Restart ();
 
                 var endPoints = Engine.PeerListeners.Select (t => t.LocalEndPoint!).Where (t => t != null);
-                foreach (var endpoint in endPoints) { 
+                foreach (var endpoint in endPoints) {
                     if (InfoHashes.V1 != null)
                         await Engine.LocalPeerDiscovery.Announce (InfoHashes.V1, endpoint);
                     if (InfoHashes.V2 != null)
@@ -1014,7 +1014,6 @@ namespace MonoTorrent.Client
                 }
             }
         }
-
 
         internal async ReusableTask UpdateUsePartialFiles (bool usePartialFiles)
         {

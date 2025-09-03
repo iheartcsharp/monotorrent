@@ -29,10 +29,10 @@
   <!-- Configuration for various nuget packages -->
   <PropertyGroup>
     <!-- Use a fixed version for the core libraries so end-users can upgrade as desired -->
-    <GitInfoVersion>2.0.34</GitInfoVersion>
+    <GitInfoVersion>3.5.0</GitInfoVersion>
     <ReusableTasksVersion>4.0.0</ReusableTasksVersion>
-    <StandardSocketsHttpHandlerVersion>2.2.0.4</StandardSocketsHttpHandlerVersion>
-    <SystemMemoryVersion>4.5.1</SystemMemoryVersion>
+    <StandardSocketsHttpHandlerVersion>2.2.0.8</StandardSocketsHttpHandlerVersion>
+    <SystemMemoryVersion>4.6.3</SystemMemoryVersion>
     <MonoNatVersion>3.0</MonoNatVersion>
   </PropertyGroup>
 
@@ -41,7 +41,7 @@
     <NoWarn>1701;1702;1591;0419;netsdk1138</NoWarn>
     <CheckEolTargetFramework>false</CheckEolTargetFramework>
 
-    <LangVersion>8.0</LangVersion>
+    <LangVersion>default</LangVersion>
     <DebugType>embedded</DebugType>
     <DebugSymbols>true</DebugSymbols>
     <Deterministic>true</Deterministic>

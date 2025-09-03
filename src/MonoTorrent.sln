@@ -70,6 +70,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DhtSample", "Samples\DhtSam
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests.MonoTorrent.IntegrationTests", "Tests\Tests.MonoTorrent.IntegrationTests\Tests.MonoTorrent.IntegrationTests.csproj", "{752D9040-9C35-4A7E-932A-88A811F72A92}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BigTest", "Samples\BigTest\BigTest.csproj", "{538E1ACE-291E-4DAF-AE4D-158559130761}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -172,6 +174,10 @@ Global
 		{752D9040-9C35-4A7E-932A-88A811F72A92}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{752D9040-9C35-4A7E-932A-88A811F72A92}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{752D9040-9C35-4A7E-932A-88A811F72A92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{538E1ACE-291E-4DAF-AE4D-158559130761}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{538E1ACE-291E-4DAF-AE4D-158559130761}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{538E1ACE-291E-4DAF-AE4D-158559130761}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{538E1ACE-291E-4DAF-AE4D-158559130761}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -190,6 +196,7 @@ Global
 		{D93A2E04-5F4A-476B-8662-0F142C5C4068} = {2BB64148-15EE-4BD9-A48D-1CC8A14D7AC4}
 		{8E135233-70F3-4B05-976C-51D121650A30} = {2BB64148-15EE-4BD9-A48D-1CC8A14D7AC4}
 		{752D9040-9C35-4A7E-932A-88A811F72A92} = {8790FB34-68AA-4A1A-A339-0E1DAAB3E180}
+		{538E1ACE-291E-4DAF-AE4D-158559130761} = {2BB64148-15EE-4BD9-A48D-1CC8A14D7AC4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FDCCD363-7E21-4AA3-9373-5DCB46A67AD1}
